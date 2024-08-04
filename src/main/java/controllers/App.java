@@ -14,10 +14,13 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    public static String pathImg = "src/main/resources/images/";
+    public static String pathGif = "src/main/resources/gifs/";
+    public static String pathArchivos = "src/main/resources/archivos/";
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("principal"));
         stage.setScene(scene);
         stage.show();
     }

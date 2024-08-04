@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #cae9ff; -fx-border-color: #1b4965; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PrincipalController">
+   <children>
+      <Label alignment="TOP_CENTER" layoutX="250.0" layoutY="14.0" text="Genio adivina" textFill="#1b4965">
+         <font>
+            <Font name="Courier New Bold" size="59.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="img" fitHeight="270.0" fitWidth="421.0" layoutX="40.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="lbl" alignment="CENTER" contentDisplay="RIGHT" layoutX="461.0" layoutY="135.0" prefHeight="222.0" prefWidth="460.0" textAlignment="CENTER" textFill="#1b4965">
+         <font>
+            <Font name="Courier New Bold" size="24.0" />
+         </font>
+      </Label>
+      <Pane fx:id="pane" layoutX="491.0" layoutY="370.0" prefHeight="125.0" prefWidth="400.0">
+         <children>
+            <Button fx:id="btn" layoutX="63.0" layoutY="21.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="285.0" style="-fx-background-color: #bee9e8; -fx-border-color: #1b4965; -fx-border-width: 4;" text="¡Empecemos!" textAlignment="CENTER" textFill="#1b4965">
+               <font>
+                  <Font name="Courier New Bold Italic" size="24.0" />
+               </font>
+            </Button>
+         </children></Pane>
+   </children>
+</Pane>

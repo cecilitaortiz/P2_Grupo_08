@@ -1,0 +1,4 @@
+Oso true true true
+Lechuza false true false
+Venado true false true
+Paloma false false false
