@@ -95,5 +95,25 @@ public class ArbolBinario<E> {
         }
         return recorrido;
     }
-  
+    
+    
+    public String encontrarAnimal(ArrayList<Object> respuestas) {
+        if (isEmpty()) {
+            return null;
+        }
+        String res="";
+        System.out.print(esHoja());
+        System.out.print(raiz.contenido);
+        if (esHoja()){
+            res+=(String)(((ArrayList<Object>)raiz.contenido).get(0));
+        }
+        else{
+            ArrayList<Object> arr=new ArrayList<>();
+            for(int i=1;i<respuestas.size();i++) arr.add(respuestas.get(i));
+            if(respuestas.size()>=1)
+                if(respuestas.get(0).equals(true)) res+=raiz.izq.encontrarAnimal(arr);
+                else res+=raiz.der.encontrarAnimal(arr);
+        }
+        return res;
+    }
 }
