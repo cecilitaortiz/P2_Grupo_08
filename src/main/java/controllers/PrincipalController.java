@@ -39,6 +39,12 @@ public class PrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         inicio();
+        btn.setOnAction(e -> {
+            try {
+                App.setRoot("contador");
+            } catch (IOException ex) {
+            }
+        });
     }
 
     public void inicio() {

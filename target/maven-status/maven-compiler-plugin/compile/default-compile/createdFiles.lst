@@ -2,6 +2,8 @@ principal\ABB.class
 principal\ABB$Nodo.class
 principal\ArbolBinario$Nodo.class
 module-info.class
+controllers\App.class
+principal\Fichero.class
+controllers\ContadorController.class
 controllers\PrincipalController.class
 principal\ArbolBinario.class
-controllers\App.class
