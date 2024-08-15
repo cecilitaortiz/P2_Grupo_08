@@ -8,21 +8,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
-public class PreguntasController implements Initializable {
+public class RespuestaController implements Initializable{
 
     @FXML
     private Button btnBack;
-
-    @FXML
-    private Button btnNo;
-
-    @FXML
-    private Button btnSi;
 
     @FXML
     private ImageView img;
@@ -43,20 +36,13 @@ public class PreguntasController implements Initializable {
                 // ex.printStackTrace();
             }
         });
-        btnSi.setOnAction(e -> {
-            try {
-                App.setRoot("respuesta");
-            } catch (IOException ex) {
-                // ex.printStackTrace();
-            }
-        });
         
 
     }
 
     public void inicio() {
         try {
-            Image gif = new Image(new FileInputStream(App.pathGif + "1.gif"));
+            Image gif = new Image(new FileInputStream(App.pathGif + "bien.gif"));
 
             img.setImage(gif);
         } catch (IOException e) {
@@ -64,9 +50,4 @@ public class PreguntasController implements Initializable {
         }
 
     }
-
-    
-
 }
-
-

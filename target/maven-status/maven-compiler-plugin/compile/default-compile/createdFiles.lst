@@ -3,6 +3,7 @@ principal\ABB$Nodo.class
 principal\ArbolBinario$Nodo.class
 module-info.class
 controllers\App.class
+controllers\RespuestaController.class
 principal\Fichero.class
 controllers\PreguntasController.class
 controllers\ContadorController.class
