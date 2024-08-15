@@ -46,7 +46,12 @@ public class ContadorController implements Initializable {
         });
         btnNext.setOnAction(e -> {
             if (validar(txtf)) {
-                lbl.setText("yey");
+                try {
+                App.setRoot("preguntas");
+            } catch (IOException ex) {
+                // ex.printStackTrace();
+            }
+                
             }
         });
 
@@ -69,7 +74,8 @@ public class ContadorController implements Initializable {
             return false;
         } else {
             Integer num = Integer.valueOf(txtf.getText());
-            if (num > App.preguntas.size()) {
+            //App.preguntas.size()
+            if (num > 3) {
                 lbl.setText("¡Perdón, pero no puedo \ncon tantas preguntas, \nelige menos! :(");
                 return false;
             }
