@@ -4,6 +4,9 @@
  */
 package controllers;
 
+import static controllers.App.pathArchivos;
+import static controllers.App.preguntas;
+import static controllers.App.respuestas;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -15,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import principal.Fichero;
 
 /**
  * FXML Controller class
@@ -37,7 +41,7 @@ public class PrincipalController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+            // TODO
         inicio();
         btn.setOnAction(e -> {
             try {

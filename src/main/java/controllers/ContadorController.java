@@ -28,7 +28,7 @@ public class ContadorController implements Initializable {
     private Label lbl;
 
     @FXML
-    private TextField txtf;
+    public static TextField txtf;
 
     /**
      * Initializes the controller class.
@@ -41,16 +41,16 @@ public class ContadorController implements Initializable {
             try {
                 App.setRoot("principal");
             } catch (IOException ex) {
-                // ex.printStackTrace();
+                 ex.printStackTrace();
             }
         });
         btnNext.setOnAction(e -> {
             if (validar(txtf)) {
                 try {
-                App.setRoot("preguntas");
-            } catch (IOException ex) {
-                // ex.printStackTrace();
-            }
+                    App.setRoot("preguntas");   
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
                 
             }
         });
@@ -68,17 +68,19 @@ public class ContadorController implements Initializable {
 
     }
 
-    public boolean validar(TextField txtf) {
+    public boolean validar(TextField txtf){
         if (txtf.getText() == "") {
             lbl.setText("Si no me dices cuántas \npreguntas puedo \nhacer, no podemos \njugar >:(");
             return false;
         } else {
+            for(char c : txtf.getText().toCharArray()) if(!Character.isDigit(c)) lbl.setText("Por favor escribe un\nnumero");
             Integer num = Integer.valueOf(txtf.getText());
             //App.preguntas.size()
-            if (num > 3) {
+            if (num > App.preguntas.size()) {
                 lbl.setText("¡Perdón, pero no puedo \ncon tantas preguntas, \nelige menos! :(");
                 return false;
             }
+            
         }
         return true;
 

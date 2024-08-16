@@ -5,54 +5,51 @@
 package principal;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  * @author Dario Anchundia Cobo
  */
 public class Fichero {
-    public static ArrayList<ArrayList<Object>> leerPreguntas(String filePath) throws IOException {
-        ArrayList<ArrayList<Object>> result = new ArrayList<>();
+    
+    public static ArrayList<String> leerPreguntas(String filePath) throws IOException {
+        ArrayList<String> preguntas = new ArrayList<>();
 
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"));
+        
         String line;
         while ((line = reader.readLine()) != null) {
-            String[] parts = line.split(" ");
-            if (parts.length == 2) {
-                ArrayList<Object> entry = new ArrayList<>();
-                entry.add(parts[0]);
-                entry.add(Boolean.parseBoolean(parts[1]));
-                result.add(entry);
+            if (line.startsWith("¿") && line.endsWith("?")) {
+                preguntas.add(line);
             } else {
                 System.out.println("Línea en formato incorrecto: " + line);
             }
         }
         reader.close();
 
-        return result;
+        return preguntas;
     }
     
-    public static ArrayList<ArrayList<Object>> leerRespuestas(String filePath) throws IOException {
-        ArrayList<ArrayList<Object>> result = new ArrayList<>();
+    public static HashMap<ArrayList<Boolean>, String> leerRespuestas(String filePath) throws IOException {
+        HashMap<ArrayList<Boolean>, String> result = new HashMap<>();
 
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"));
         String line;
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(" ");
             if (parts.length == 4) {
-                ArrayList<Object> entry = new ArrayList<>();
-                entry.add(parts[0]); // Añadir el String
-
+                String value = parts[0];
                 ArrayList<Boolean> booleans = new ArrayList<>();
                 for (int i = 1; i < parts.length; i++) {
-                    booleans.add(Boolean.parseBoolean(parts[i])); // Añadir los booleanos
+                    booleans.add(Boolean.parseBoolean(parts[i]));
                 }
-                entry.add(booleans); // Añadir la lista de booleanos al segundo índice
-
-                result.add(entry);
+                result.put(booleans,value);
             } else {
                 System.out.println("Línea en formato incorrecto: " + line);
             }
