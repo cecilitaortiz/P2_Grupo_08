@@ -32,7 +32,11 @@ public class PreguntasController implements Initializable {
 
     @FXML
     private Pane pane;
-@Override
+    
+    public static int numero;
+    public static int cont;
+    
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         inicio();
@@ -40,18 +44,39 @@ public class PreguntasController implements Initializable {
             try {
                 App.setRoot("principal");
             } catch (IOException ex) {
-                // ex.printStackTrace();
+//                 ex.printStackTrace();
             }
         });
+        cont=0;
+        lbl.setText(App.preguntas.get(cont));
         btnSi.setOnAction(e -> {
-            try {
-                App.setRoot("respuesta");
-            } catch (IOException ex) {
-                // ex.printStackTrace();
+            if(cont<numero-1){
+                cont++;
+                lbl.setText(App.preguntas.get(cont));
+                RespuestaController.res.add(true);
+            }else{
+                RespuestaController.res.add(true);
+                try {
+                    App.setRoot("respuesta");
+                } catch (IOException ex) {
+                    // ex.printStackTrace();
+                }                
             }
-        });
-        
-
+        });    
+        btnNo.setOnAction(e -> {
+            if(cont<numero-1){
+                cont++;
+                lbl.setText(App.preguntas.get(cont));
+                RespuestaController.res.add(false);
+            }else{
+                RespuestaController.res.add(false);
+                try {
+                    App.setRoot("respuesta");
+                } catch (IOException ex) {
+                    // ex.printStackTrace();
+                }                
+            }
+        });    
     }
 
     public void inicio() {
@@ -62,7 +87,7 @@ public class PreguntasController implements Initializable {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
+        
     }
 
     

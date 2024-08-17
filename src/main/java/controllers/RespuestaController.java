@@ -3,6 +3,7 @@ package controllers;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import principal.ArbolBinario;
 
 public class RespuestaController implements Initializable{
 
@@ -25,10 +27,15 @@ public class RespuestaController implements Initializable{
 
     @FXML
     private Pane pane;
-@Override
+    
+    public static ArbolBinario<ArrayList<Object>> arbol;
+    public static ArrayList<Object> res=new ArrayList<>();
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         inicio();
+        lbl.setText("Tu respuesta es: "+arbol.encontrarAnimal(res));
+        res=new ArrayList<>();
         btnBack.setOnAction(e -> {
             try {
                 App.setRoot("principal");
@@ -43,7 +50,6 @@ public class RespuestaController implements Initializable{
     public void inicio() {
         try {
             Image gif = new Image(new FileInputStream(App.pathGif + "bien.gif"));
-
             img.setImage(gif);
         } catch (IOException e) {
             System.out.println(e.getMessage());

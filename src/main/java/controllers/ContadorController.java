@@ -3,6 +3,7 @@ package controllers;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,7 +29,7 @@ public class ContadorController implements Initializable {
     private Label lbl;
 
     @FXML
-    public static TextField txtf;
+    private TextField txtf;
 
     /**
      * Initializes the controller class.
@@ -46,8 +47,12 @@ public class ContadorController implements Initializable {
         });
         btnNext.setOnAction(e -> {
             if (validar(txtf)) {
+                PreguntasController.numero=Integer.parseInt(txtf.getText());
+                ArrayList<String> preguntasarbol=new ArrayList<>();
+                for(int i=0;i<Integer.parseInt(txtf.getText());i++) preguntasarbol.add(App.preguntas.get(i));
+                RespuestaController.arbol=principal.ArbolBinario.crearArbolBinario(preguntasarbol, App.respuestas);
                 try {
-                    App.setRoot("preguntas");   
+                    App.setRoot("preguntas");  
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }

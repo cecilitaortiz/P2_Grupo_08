@@ -38,12 +38,12 @@ public class App extends Application {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        ArbolBinario<ArrayList<Object>> arbol=principal.ArbolBinario.crearArbolBinario(preguntas, respuestas);
-        for(ArrayList<Object> a:arbol.recorridoPreOrden()){
-            System.out.println(a.get(0)+" "+a.get(1));
-        }
-        System.out.println(arbol.altura());
-        System.out.println(respuestas);
+//        ArbolBinario<ArrayList<Object>> arbol=principal.ArbolBinario.crearArbolBinario(preguntas, respuestas);
+//        for(ArrayList<Object> a:arbol.recorridoPreOrden()){
+//            System.out.println(a.get(0)+" "+a.get(1));
+//        }
+//        System.out.println(arbol.altura());
+//        System.out.println(respuestas);
         
         stage.show();
         

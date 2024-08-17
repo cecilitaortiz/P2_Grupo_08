@@ -7,6 +7,7 @@ package principal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  *
@@ -129,15 +130,9 @@ public class ArbolBinario<E> {
             arrayRespuestasV.add(arrbooltrue);
             ArrayList<Object> arrayRespuestasF=new ArrayList<>();
             arrayRespuestasF.add("No se pudo encontrar el animal");
-            arrayRespuestasF.add(arrboolfalse);   
-            
-            System.out.println("n");
-            System.out.println(arrbooltrue);
-            System.out.println(arrboolfalse);
-            
-            System.out.println("/");
+            arrayRespuestasF.add(arrboolfalse);
             ArrayList<Object> answers=new ArrayList<>();
-            if(respuestas.keySet().contains(arrbooltrue) && respuestas.keySet().contains(arrboolfalse)){
+            if(isSubArray(respuestas.keySet(),arrbooltrue) && isSubArray(respuestas.keySet(),arrboolfalse)){
                 ArrayList<Object> answersizq=new ArrayList<>();
                 answersizq.add(respuestas.get(arrbooltrue));
                 answersizq.add(arrbooltrue);
@@ -148,14 +143,14 @@ public class ArbolBinario<E> {
                 ArbolBinario<ArrayList<Object>> subArbolDer = new ArbolBinario<>(answersder);
                 arbol.addLeft(subArbolIzq);
                 arbol.addRight(subArbolDer);
-            }else if(respuestas.keySet().contains(arrbooltrue)){
+            }else if(isSubArray(respuestas.keySet(),arrbooltrue)){
                 answers.add(respuestas.get(arrbooltrue));
                 answers.add(arrbooltrue);
                 ArbolBinario<ArrayList<Object>> subArbolIzq = new ArbolBinario<>(answers);
                 ArbolBinario<ArrayList<Object>> subArbolDer = new ArbolBinario<>(arrayRespuestasF);
                 arbol.addLeft(subArbolIzq);
                 arbol.addRight(subArbolDer);
-            }else if(respuestas.keySet().contains(arrboolfalse)){
+            }else if(isSubArray(respuestas.keySet(),arrboolfalse)){
                 answers.add(respuestas.get(arrboolfalse));
                 answers.add(arrboolfalse);
                 ArbolBinario<ArrayList<Object>> subArbolIzq = new ArbolBinario<>(arrayRespuestasV);
@@ -200,6 +195,17 @@ public class ArbolBinario<E> {
         }
     }
     
+    public static boolean isSubArray(Set<ArrayList<Boolean>> array1, ArrayList<Boolean> array2) {
+        for (ArrayList<Boolean> list : array1) {
+            int size = array2.size();
+            for (int i = 0; i <= list.size() - size; i++) {
+                if (list.subList(i, i + size).equals(array2)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     
     public String encontrarAnimal(ArrayList<Object> respuestas) {
         if (isEmpty()) {
@@ -220,4 +226,5 @@ public class ArbolBinario<E> {
         }
         return res;
     }
+    
 }
