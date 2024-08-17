@@ -35,8 +35,8 @@ public class RespuestaController implements Initializable{
         // TODO
         inicio();
         lbl.setText("Tu respuesta es: "+arbol.encontrarAnimal(res));
-        res=new ArrayList<>();
         btnBack.setOnAction(e -> {
+            res=new ArrayList<>();
             try {
                 App.setRoot("principal");
             } catch (IOException ex) {

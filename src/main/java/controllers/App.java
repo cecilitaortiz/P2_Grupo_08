@@ -20,7 +20,7 @@ public class App extends Application {
     public static String pathGif = "src/main/resources/gifs/";
     public static String pathArchivos = "src/main/resources/archivos/";
     public static ArrayList<String> preguntas;
-    public static HashMap<ArrayList<Boolean>, String> respuestas;
+    public static HashMap<ArrayList<Boolean>, ArrayList<String>> respuestas;
     
     
 

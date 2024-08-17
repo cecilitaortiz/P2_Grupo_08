@@ -2,3 +2,19 @@
 ¿Tu animal es carnívoro?
 ¿Tu animal camina en 4 patas?
 ¿Tu animal es acuático?
+¿Tu animal es herbívoro?
+¿Tu animal tiene plumas?
+¿Tu animal es volador?
+¿Tu animal vive en la selva?
+¿Tu animal es ovíparo?
+¿Tu animal tiene caparazón?
+¿Tu animal es un reptil?
+¿Tu animal tiene patas?
+¿Tu animal puede cambiar de color?
+¿Tu animal es doméstico?
+¿Tu animal vive en grupo?
+¿Tu animal es nocturno?
+¿Tu animal es de sangre fría?
+¿Tu animal tiene una cola larga?
+¿Tu animal es migratorio?
+¿Tu animal es endémico de algún lugar?

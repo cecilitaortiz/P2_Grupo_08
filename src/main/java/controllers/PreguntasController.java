@@ -73,7 +73,7 @@ public class PreguntasController implements Initializable {
                 try {
                     App.setRoot("respuesta");
                 } catch (IOException ex) {
-                    // ex.printStackTrace();
+                     ex.printStackTrace();
                 }                
             }
         });    

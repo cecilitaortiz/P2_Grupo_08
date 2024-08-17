@@ -1,11 +1,53 @@
-Oso true true true false
-Lechuza false true false false
-Venado true false true false
-Paloma false false false false
-Tiburón false true false true
-Elefante true false true false
-Tigre true true true false
-Delfín true true false true
-Serpiente false true false false
-Pingüino false false false true
-Rana false false false true
+Oso true true true false false false false false false false false true false false true true false true false false
+Lechuza false true false false false true true false true false false true false false false true false false false false
+Venado true false true false true false false true false false false true false false true false false true false false
+Paloma false false false false false true true false true false false true false true false false false true true false
+Tiburón false true false true false false false false false false false false false false false false true true false true
+Elefante true false true false true false false true false false false true false false true false false false false false
+Cocodrilo false true true false false false false false false false true true false false false false true true false false
+Pingüino false false false false false true false false true false false true false false true true true false false false
+Loro false false false false false true true false true false false true false true false false false true true false
+Gato true true true false false false false false false false false true false true false true false false false false
+Perro true true true false false false false false false false false true false true true false false false false false
+Serpiente false true false false false false false false false false true false true false false false true true false true
+Jirafa true false true false true false false true false false false true false false true false false false false false
+Canguro true false true false true false false false false false false true false false true false false false false false
+Rana false false false false false false false false false false true true true false false false true false false false
+Águila false true false false false true true false true false false true false false false false false true true false
+Zorro true true true false false false false false false false false true false false false true false false false false
+Hipopótamo true false true false false false false false false false false true false false true false false false false false
+Tortuga false false true false false false false false false true true true false false false false true false false false
+Murciélago true true false false false false true false false false false true false false true true false false false false
+Camello true false true false true false false false false false false true false false false false false false false false
+Cebra true false true false true false false false false false false true false false true false false false false false
+Ballena true false false true false false false false false false false false false false false true false false false true
+Delfín true false false true false false false false false false false false false false true true false false false false
+Ciempiés false false false false false false false false false false true true false false false false true false false true
+Cobra false true false false false false false false false false true false true false false false true true false false
+Caballo true false true false true false false false false false false true false false true false false false false false
+Oveja true false true false true false false false false false false true false false true false false false false false
+Jaguar true true true false false false false true false false false true false false false true false false false false
+Mono true false true false true false false true false false false true false false true false false false false false
+León true true true false false false false true false false false true false false false true false false false false
+Pantera true true true false false false false true false false false true false false false true false false false false
+Búfalo true false true false true false false false false false false true false false true false false false false false
+Ratón true false true false false false false false false false false true false false false false false false false false
+Conejo true false true false true false false false false false false true false false false false false false false false
+Cangrejo false false true false false false false false false true false true false false false false true false false false
+Ardilla true false true false true false false false false false false true false false false false false false false false
+Pato false false false false false true true false true false false true false true true false false true true false
+Buitre false true false false false true true false true false false true false false false true false true false false
+Rinoceronte true false true false true false false true false false false true false false true false false false false false
+Koala true false true false true false false false false false false true false false false false false false false false
+Zebra true false true false true false false false false false false true false false true false false false false false
+Ornitorrinco true false false true false false false false false true true false false false false false false false false true
+Caracol false false false false false false false false false true true false false false false false true false false false
+Pingüino false false false false false true false false true false false true false false true true true false false false
+Orca true false false true false false false false false false false false false false false true false false false false
+Gorila true false true false true false false true false false false true false false true false false false false false
+Tigre true true true false false false false true false false false true false false false true false false false false
+Castor true false true false true false false false false false false true false false true false false false false false
+Iguana false false true false false false false false false false true true false false false false true false false false
+Flamenco false false false false false true true false true false false true false false false false false true true false
+Mofeta true false true false false false false false false false false true false false false true false false false false
+Abeja false false false false false false false false false false true true false false false false true false false true
