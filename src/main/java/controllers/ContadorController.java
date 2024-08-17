@@ -50,7 +50,7 @@ public class ContadorController implements Initializable {
                 PreguntasController.numero=Integer.parseInt(txtf.getText());
                 ArrayList<String> preguntasarbol=new ArrayList<>();
                 for(int i=0;i<Integer.parseInt(txtf.getText());i++) preguntasarbol.add(App.preguntas.get(i));
-                RespuestaController.arbol=principal.ArbolBinario.crearArbolBinario(preguntasarbol, App.respuestas);
+                RespuestaController.arbol=principal.ArbolBinario.arboljuego(preguntasarbol, App.respuestas);
                 try {
                     App.setRoot("preguntas");  
                 } catch (IOException ex) {
@@ -78,17 +78,26 @@ public class ContadorController implements Initializable {
             lbl.setText("Si no me dices cuántas \npreguntas puedo \nhacer, no podemos \njugar >:(");
             return false;
         } else {
-            for(char c : txtf.getText().toCharArray()) if(!Character.isDigit(c)) lbl.setText("Por favor escribe un\nnumero");
-            Integer num = Integer.valueOf(txtf.getText());
-            //App.preguntas.size()
-            if (num > App.preguntas.size()) {
-                lbl.setText("¡Perdón, pero no puedo \ncon tantas preguntas, \nelige menos! :(");
+            try {
+                int numero = Integer.parseInt(txtf.getText());
+                if(numero==0) throw new NumberFormatException();
+                if(numero >= 1 && numero <= App.preguntas.size()) return true;
+                else{
+                    lbl.setText("¡Perdón, pero no puedo \ncon tantas preguntas, \nelige menos! :(");
+                    return false;
+                }
+                
+            } catch (NumberFormatException e) {
+                lbl.setText("Por favor ingrese\nun numero valido\nde preguntas");
                 return false;
             }
             
+            
         }
-        return true;
 
     }
+    
+    
+    
 
 }
