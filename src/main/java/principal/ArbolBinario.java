@@ -113,7 +113,7 @@ public class ArbolBinario<E> {
 
         // Método auxiliar para crear los subárboles recursivamente
         crearSubArbol(arbol, altura - 1, true, preguntas, respuestas, new ArrayList<>());
-
+        for(ArrayList<Object> o:arbol.recorridoPreOrden()) System.out.println(o);
         return arbol;
     }
 
@@ -134,24 +134,24 @@ public class ArbolBinario<E> {
             ArrayList<Object> answers=new ArrayList<>();
             if(isSubArray(respuestas.keySet(),arrbooltrue) && isSubArray(respuestas.keySet(),arrboolfalse)){
                 ArrayList<Object> answersizq=new ArrayList<>();
-                answersizq.add(respuestas.get(arrbooltrue));
+                answersizq.add(respuestas.get(subArray(respuestas.keySet(),arrbooltrue)));
                 answersizq.add(arrbooltrue);
                 ArrayList<Object> answersder=new ArrayList<>();
-                answersder.add(respuestas.get(arrboolfalse));
+                answersder.add(respuestas.get(subArray(respuestas.keySet(),arrboolfalse)));
                 answersder.add(arrboolfalse);
                 ArbolBinario<ArrayList<Object>> subArbolIzq = new ArbolBinario<>(answersizq);
                 ArbolBinario<ArrayList<Object>> subArbolDer = new ArbolBinario<>(answersder);
                 arbol.addLeft(subArbolIzq);
                 arbol.addRight(subArbolDer);
             }else if(isSubArray(respuestas.keySet(),arrbooltrue)){
-                answers.add(respuestas.get(arrbooltrue));
+                answers.add(respuestas.get(subArray(respuestas.keySet(),arrbooltrue)));
                 answers.add(arrbooltrue);
                 ArbolBinario<ArrayList<Object>> subArbolIzq = new ArbolBinario<>(answers);
                 ArbolBinario<ArrayList<Object>> subArbolDer = new ArbolBinario<>(arrayRespuestasF);
                 arbol.addLeft(subArbolIzq);
                 arbol.addRight(subArbolDer);
             }else if(isSubArray(respuestas.keySet(),arrboolfalse)){
-                answers.add(respuestas.get(arrboolfalse));
+                answers.add(respuestas.get(subArray(respuestas.keySet(),arrboolfalse)));
                 answers.add(arrboolfalse);
                 ArbolBinario<ArrayList<Object>> subArbolIzq = new ArbolBinario<>(arrayRespuestasV);
                 ArbolBinario<ArrayList<Object>> subArbolDer = new ArbolBinario<>(answers);
@@ -207,11 +207,23 @@ public class ArbolBinario<E> {
         return false;
     }
     
+    public static ArrayList<Boolean> subArray(Set<ArrayList<Boolean>> array1, ArrayList<Boolean> array2){
+        for (ArrayList<Boolean> list : array1) {
+            int size = array2.size();
+            for (int i = 0; i <= list.size() - size; i++) {
+                if (list.subList(i, i + size).equals(array2)) {
+                    return list;
+                }
+            }
+        }
+        return array2;
+    }
+    
     public String encontrarAnimal(ArrayList<Object> respuestas) {
         if (isEmpty()) {
             return null;
         }
-        String res="";
+        String res=" ";
 //        System.out.print(esHoja());
 //        System.out.print(raiz.contenido);
         if (esHoja()){

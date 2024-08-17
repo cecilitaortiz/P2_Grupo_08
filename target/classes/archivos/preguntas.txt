@@ -1,3 +1,4 @@
 ¿Tu animal es un mamífero?
 ¿Tu animal es carnívoro?
 ¿Tu animal camina en 4 patas?
+¿Tu animal es acuático?

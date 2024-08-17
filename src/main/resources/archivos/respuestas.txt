@@ -1,4 +1,11 @@
-Oso true true true
-Lechuza false true false
-Venado true false true
-Paloma false false false
+Oso true true true false
+Lechuza false true false false
+Venado true false true false
+Paloma false false false false
+Tiburón false true false true
+Elefante true false true false
+Tigre true true true false
+Delfín true true false true
+Serpiente false true false false
+Pingüino false false false true
+Rana false false false true

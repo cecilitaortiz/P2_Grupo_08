@@ -43,7 +43,7 @@ public class Fichero {
         String line;
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(" ");
-            if (parts.length == 4) {
+            if (parts.length == controllers.App.preguntas.size()+1) {
                 String value = parts[0];
                 ArrayList<Boolean> booleans = new ArrayList<>();
                 for (int i = 1; i < parts.length; i++) {
