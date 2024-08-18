@@ -34,7 +34,8 @@ public class PrincipalController implements Initializable {
     @FXML
     private Button btn;
     @FXML
-    private Pane pane;
+    private Button btna;
+    
 
     /**
      * Initializes the controller class.
@@ -46,6 +47,12 @@ public class PrincipalController implements Initializable {
         btn.setOnAction(e -> {
             try {
                 App.setRoot("contador");
+            } catch (IOException ex) {
+            }
+        });
+        btna.setOnAction(e -> {
+            try {
+                App.setRoot("aumentar");
             } catch (IOException ex) {
             }
         });

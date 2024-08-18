@@ -8,13 +8,11 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 
-public class ContadorController implements Initializable {
+public class AumentarController implements Initializable{
 
     @FXML
     private Button btnBack;
@@ -25,15 +23,9 @@ public class ContadorController implements Initializable {
     @FXML
     private ImageView img;
 
-    @FXML
-    private Label lbl;
 
     @FXML
     private TextField txtf;
-
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -47,7 +39,7 @@ public class ContadorController implements Initializable {
         });
         btnNext.setOnAction(e -> {
             if (validar(txtf)) {
-                PreguntasController.numero = Integer.parseInt(txtf.getText());
+                PreguntasController.numero = 20;
                 ArrayList<String> preguntasarbol = new ArrayList<>();
                 for (int i = 0; i < Integer.parseInt(txtf.getText()); i++) {
                     preguntasarbol.add(App.preguntas.get(i));
@@ -66,7 +58,7 @@ public class ContadorController implements Initializable {
 
     public void inicio() {
         try {
-            Image gif = new Image(new FileInputStream(App.pathGif + "numeros.gif"));
+            Image gif = new Image(new FileInputStream(App.pathGif + "pregunta.gif"));
 
             img.setImage(gif);
         } catch (IOException e) {
@@ -74,31 +66,13 @@ public class ContadorController implements Initializable {
         }
 
     }
-
     public boolean validar(TextField txtf) {
         if ("".equals(txtf.getText())) {
-            lbl.setText("Si no me dices cuántas \npreguntas puedo \nhacer, no podemos \njugar >:(");
             return false;
         } else {
-            try {
-                int numero = Integer.parseInt(txtf.getText());
-                if (numero == 0) {
-                    throw new NumberFormatException();
-                }
-                if (numero >= 1 && numero <= App.preguntas.size()) {
-                    return true;
-                } else {
-                    lbl.setText("¡Perdón, pero no puedo \ncon tantas preguntas, \nelige menos! :(");
-                    return false;
-                }
-
-            } catch (NumberFormatException e) {
-                lbl.setText("Por favor ingrese\nun numero valido\nde preguntas");
-                return false;
-            }
+            return true;
 
         }
 
     }
-
 }

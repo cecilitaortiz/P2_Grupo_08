@@ -6,4 +6,5 @@ module-info.class
 controllers\App.class
 controllers\RespuestaController.class
 principal\Fichero.class
+controllers\AumentarController.class
 principal\ArbolBinario.class

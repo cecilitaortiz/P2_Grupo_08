@@ -27,5 +27,15 @@
                </font>
             </Button>
          </children></Pane>
+      <Button fx:id="btna" layoutX="117.0" layoutY="467.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="252.0" style="-fx-background-color: #bee9e8; -fx-border-color: #1b4965; -fx-border-width: 4;" text="¡Añadir otro animal!" textAlignment="CENTER" textFill="#1b4965">
+         <font>
+            <Font name="Courier New Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Label alignment="TOP_CENTER" layoutX="77.0" layoutY="421.0" text="¿¡El genio no acertó tu animal!?" textFill="#1b4965">
+         <font>
+            <Font name="Courier New Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

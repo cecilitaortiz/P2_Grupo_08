@@ -30,8 +30,6 @@ public class PreguntasController implements Initializable {
     @FXML
     private Label lbl;
 
-    @FXML
-    private Pane pane;
     
     public static int numero;
     public static int cont;
