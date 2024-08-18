@@ -4,6 +4,7 @@
  */
 package principal;
 
+import controllers.RespuestaController;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -99,7 +100,7 @@ public class ArbolBinario<E> {
         }
         return recorrido;
     }
-    
+
     // Este método crea un árbol binario donde cada nodo contiene un ArrayList de dos elementos:
     // Índice 0: La respuesta (true/false) que llevó a la pregunta.
     // Índice 1: El contenido de la pregunta (String).
@@ -140,8 +141,8 @@ public class ArbolBinario<E> {
         ArrayList<Boolean> caminoFalse = new ArrayList<>(caminoRespuestas);
         caminoFalse.add(false);
 
-        ArbolBinario<ArrayList<Object>> subArbolIzq = crearHoja(respuestas, caminoTrue, "No se pudo encontrar el animal");
-        ArbolBinario<ArrayList<Object>> subArbolDer = crearHoja(respuestas, caminoFalse, "No se pudo encontrar el animal");
+        ArbolBinario<ArrayList<Object>> subArbolIzq = crearHoja(respuestas, caminoTrue, "No se pudo encontrar \nel animal");
+        ArbolBinario<ArrayList<Object>> subArbolDer = crearHoja(respuestas, caminoFalse, "No se pudo encontrar \nel animal");
 
         arbol.addLeft(subArbolIzq);
         arbol.addRight(subArbolDer);
@@ -151,9 +152,10 @@ public class ArbolBinario<E> {
     private static ArbolBinario<ArrayList<Object>> crearHoja(HashMap<ArrayList<Boolean>, ArrayList<String>> respuestas, ArrayList<Boolean> camino, String mensajePorDefecto) {
         ArrayList<Object> contenido = new ArrayList<>();
         if (isSubArray(respuestas.keySet(), camino)) {
-            ArrayList<String> arrayRespuestas=new ArrayList<>();
-            for(ArrayList<Boolean> a:arrayCamino(respuestas.keySet(), camino))
+            ArrayList<String> arrayRespuestas = new ArrayList<>();
+            for (ArrayList<Boolean> a : arrayCamino(respuestas.keySet(), camino)) {
                 arrayRespuestas.addAll(respuestas.get(a));
+            }
             contenido.add(arrayRespuestas);
         } else {
             contenido.add(mensajePorDefecto);
@@ -230,9 +232,11 @@ public class ArbolBinario<E> {
 
         // Si es una hoja, se obtiene la respuesta del contenido del nodo
         if (esHoja()) {
-            resultado.append(((ArrayList<Object>)raiz.contenido).get(0));
+            resultado.append(((ArrayList<Object>) raiz.contenido).get(0));
+
         } else {
             // Crear una lista de respuestas restantes
+
             ArrayList<Object> respuestasRestantes = new ArrayList<>(respuestas.subList(1, respuestas.size()));
 
             // Recursivamente encontrar el animal en el subárbol izquierdo o derecho
@@ -253,5 +257,4 @@ public class ArbolBinario<E> {
         return resultadoStr;
     }
 
-    
 }

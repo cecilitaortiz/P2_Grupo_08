@@ -13,10 +13,10 @@
             <Font name="Courier New Bold" size="59.0" />
          </font>
       </Label>
-      <ImageView fx:id="img" fitHeight="242.0" fitWidth="488.0" layoutX="236.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img" fitHeight="242.0" fitWidth="488.0" layoutX="76.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" />
       <Pane fx:id="pane" layoutX="76.0" layoutY="396.0" prefHeight="128.0" prefWidth="688.0">
          <children>
-            <Label fx:id="lbl" alignment="TOP_CENTER" layoutX="8.0" layoutY="14.0" prefHeight="23.0" prefWidth="672.0" text="Tu respuesta es....." textFill="#1b4965">
+            <Label fx:id="lbl" alignment="TOP_CENTER" layoutX="8.0" layoutY="14.0" prefHeight="99.0" prefWidth="672.0" text="Tu respuesta es....." textFill="#1b4965">
                <font>
                   <Font name="Courier New Bold" size="24.0" />
                </font>
@@ -32,5 +32,6 @@
             <Font name="Courier New Bold" size="24.0" />
          </font>
       </Label>
+      <ImageView fx:id="imgRespuesta" fitHeight="242.0" fitWidth="308.0" layoutX="624.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>
