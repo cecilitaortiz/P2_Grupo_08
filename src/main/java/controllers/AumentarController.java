@@ -42,7 +42,7 @@ public class AumentarController implements Initializable {
         btnNext.setOnAction(e -> {
             if (validar(txtf)) {
                 animalAnadir = txtf.getText();
-                PreguntasController.numero = 20;
+                PreguntasController.numero = App.preguntas.size();
                 ArrayList<String> preguntasarbol = new ArrayList<>();
                 for (int i = 0; i < PreguntasController.numero; i++) {
                     preguntasarbol.add(App.preguntas.get(i));
