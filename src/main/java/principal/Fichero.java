@@ -5,8 +5,10 @@
 package principal;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -62,5 +64,15 @@ public class Fichero {
 
         return result;
     }
-    
+    public static boolean escribir(String ruta, String linea) {
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true))) {
+            writer.write(linea+"\n");
+        } catch (IOException ex) {
+            System.err.println("No se pudo escribir el archivo " + ruta);
+            return false;
+        }
+
+        return true;
+    }
 }

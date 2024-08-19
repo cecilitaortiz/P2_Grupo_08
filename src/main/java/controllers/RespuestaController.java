@@ -27,7 +27,8 @@ public class RespuestaController implements Initializable {
 
     @FXML
     private Label lbl;
-
+    @FXML
+    private Label lblArriba;
     public static ArbolBinario<ArrayList<Object>> arbol;
     public static ArrayList<Object> res = new ArrayList<>();
     public static String imagenResp;
@@ -40,16 +41,21 @@ public class RespuestaController implements Initializable {
         int cantidadRespuestas = 3;
         //Para obtener un String con todos los animales separados por ", " reemplazar el parametro cantidadRespuesta con 0
         String animales = stringAnimales(cantidadRespuestas, arbol.encontrarAnimal(res));
+        if (AumentarController.animalAnadir == null) {
 
-        if (animales.split(",").length == 1) {
-            lbl.setText("Nada más ni nada menos \nque un: " + animales);
-            imagenRespuesta(animales);
-        } else {
-            lbl.setText("Yo creo que puede ser: " + animales);
+            if (animales.split(",").length == 1) {
+                lbl.setText("Nada más ni nada menos \nque un: " + animales);
+                imagenRespuesta(animales);
+            } else {
+                lbl.setText("Yo creo que puede ser: " + animales);
+                imagenRespuesta("animales");
+            }
+        }else{
+            lblArriba.setText("Gracias por tu ayuda!");
+            lbl.setText("La próxima que juegues\nya sabré que responder");
             imagenRespuesta("animales");
+            
         }
-
-        System.out.println("Tu respuesta es: " + animales);
         btnBack.setOnAction(e -> {
             res = new ArrayList<>();
             try {

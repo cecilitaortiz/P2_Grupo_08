@@ -39,10 +39,6 @@ public class App extends Application {
             ex.printStackTrace();
         }
         stage.show();
-//        ArbolBinario<ArrayList<Object>> arbol=principal.ArbolBinario.crearArbolBinario(preguntas,respuestas);
-//        for(ArrayList<Object> a:arbol.recorridoPreOrden()){
-//            System.out.println(a);
-//        }
     
         
     }

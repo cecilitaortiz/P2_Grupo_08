@@ -27,7 +27,7 @@
             <Font name="Courier New Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Label alignment="TOP_CENTER" layoutX="42.0" layoutY="103.0" prefHeight="23.0" prefWidth="672.0" text="El animal en el que piensas es....." textFill="#1b4965">
+      <Label fx:id="lblArriba" alignment="TOP_CENTER" layoutX="42.0" layoutY="103.0" prefHeight="23.0" prefWidth="672.0" text="El animal en el que piensas es....." textFill="#1b4965">
          <font>
             <Font name="Courier New Bold" size="24.0" />
          </font>

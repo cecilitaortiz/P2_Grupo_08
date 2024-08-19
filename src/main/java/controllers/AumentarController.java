@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class AumentarController implements Initializable{
+public class AumentarController implements Initializable {
 
     @FXML
     private Button btnBack;
@@ -23,9 +23,11 @@ public class AumentarController implements Initializable{
     @FXML
     private ImageView img;
 
-
     @FXML
     private TextField txtf;
+
+    public static String animalAnadir;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -39,9 +41,10 @@ public class AumentarController implements Initializable{
         });
         btnNext.setOnAction(e -> {
             if (validar(txtf)) {
+                animalAnadir = txtf.getText();
                 PreguntasController.numero = 20;
                 ArrayList<String> preguntasarbol = new ArrayList<>();
-                for (int i = 0; i < Integer.parseInt(txtf.getText()); i++) {
+                for (int i = 0; i < PreguntasController.numero; i++) {
                     preguntasarbol.add(App.preguntas.get(i));
                 }
                 RespuestaController.arbol = principal.ArbolBinario.arboljuego(preguntasarbol, App.respuestas);
@@ -66,6 +69,7 @@ public class AumentarController implements Initializable{
         }
 
     }
+
     public boolean validar(TextField txtf) {
         if ("".equals(txtf.getText())) {
             return false;

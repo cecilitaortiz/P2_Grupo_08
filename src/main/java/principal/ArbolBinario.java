@@ -141,8 +141,8 @@ public class ArbolBinario<E> {
         ArrayList<Boolean> caminoFalse = new ArrayList<>(caminoRespuestas);
         caminoFalse.add(false);
 
-        ArbolBinario<ArrayList<Object>> subArbolIzq = crearHoja(respuestas, caminoTrue, "No se pudo encontrar \nel animal");
-        ArbolBinario<ArrayList<Object>> subArbolDer = crearHoja(respuestas, caminoFalse, "No se pudo encontrar \nel animal");
+        ArbolBinario<ArrayList<Object>> subArbolIzq = crearHoja(respuestas, caminoTrue, "No lo sé, me ganaste!");
+        ArbolBinario<ArrayList<Object>> subArbolDer = crearHoja(respuestas, caminoFalse, "No lo sé, me ganaste!");
 
         arbol.addLeft(subArbolIzq);
         arbol.addRight(subArbolDer);
