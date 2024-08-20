@@ -85,22 +85,6 @@ public class ArbolBinario<E> {
         return true;
     }
 
-    public ArrayList<E> recorridoPreOrden() {
-        if (isEmpty()) {
-            return null;
-        }
-        ArrayList<E> recorrido = new ArrayList<>();
-        recorrido.add(raiz.contenido);
-
-        if (raiz.izq != null) {
-            recorrido.addAll(raiz.izq.recorridoPreOrden());
-        }
-        if (raiz.der != null) {
-            recorrido.addAll(raiz.der.recorridoPreOrden());
-        }
-        return recorrido;
-    }
-
     // Este método crea un árbol binario donde cada nodo contiene un ArrayList de dos elementos:
     // Índice 0: La respuesta (true/false) que llevó a la pregunta.
     // Índice 1: El contenido de la pregunta (String).
@@ -226,14 +210,12 @@ public class ArbolBinario<E> {
         if (isEmpty()) {
             return null; // Retorna null si el árbol está vacío
         }
-
         // Inicializar el StringBuilder para construir la respuesta
         StringBuilder resultado = new StringBuilder();
 
         // Si es una hoja, se obtiene la respuesta del contenido del nodo
         if (esHoja()) {
             resultado.append(((ArrayList<Object>) raiz.contenido).get(0));
-
         } else {
             // Crear una lista de respuestas restantes
 
@@ -246,7 +228,6 @@ public class ArbolBinario<E> {
                 resultado.append(raiz.der.encontrarAnimal(respuestasRestantes));
             }
         }
-
         // Convertir el resultado a una cadena y eliminar posibles corchetes
         String resultadoStr = resultado.toString();
         if (resultadoStr.startsWith("[") && resultadoStr.endsWith("]")) {
